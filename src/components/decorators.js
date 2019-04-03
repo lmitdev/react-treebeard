@@ -98,6 +98,7 @@ Container.propTypes = {
     decorators: PropTypes.object.isRequired,
     terminal: PropTypes.bool.isRequired,
     onClick: PropTypes.func.isRequired,
+    onClickExtra: PropTypes.func.isRequired,
     animations: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.bool

@@ -12,11 +12,11 @@ const Ul = styled('ul', {
     shouldForwardProp: prop => ['className', 'children'].indexOf(prop) !== -1
 })((({style}) => style));
 
-const TreeBeard = ({animations, decorators, data, onToggle, style}) => (
+const TreeBeard = ({animations, decorators, data, onToggle, onSelect, style}) => (
     <Ul style={{...defaultTheme.tree.base, ...style.tree.base}}>
         {castArray(data).map(node => (
             <TreeNode
-                {...{decorators, node, onToggle, animations}}
+                {...{decorators, node, onToggle, onSelect, animations}}
                 key={node.id}
                 style={{...defaultTheme.tree.node, ...style.tree.node}}
             />
@@ -35,6 +35,7 @@ TreeBeard.propTypes = {
         PropTypes.bool
     ]),
     onToggle: PropTypes.func,
+    onSelect: PropTypes.func,
     decorators: PropTypes.object
 };
 
